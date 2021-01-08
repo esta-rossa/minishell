@@ -6,7 +6,7 @@
 #    By: ikhadem <ikhadem@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/12/28 08:01:27 by ikhadem           #+#    #+#              #
-#    Updated: 2020/12/30 09:06:55 by ikhadem          ###   ########.fr        #
+#    Updated: 2021/01/07 15:08:39 by ikhadem          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,14 +14,25 @@ NAME := TermCaped
 
 CC := gcc
 
+SOURCES := sources
+
+IO := $(SOURCES)/IO
+
+STRING := $(SOURCES)/string
+
+TERMINAL := $(SOURCES)/terminal
+
 SRC :=	main.c \
-		sources/IO/ft_putchar_fd.c \
-		sources/IO/ft_putstr_fd.c \
-		sources/terminal/terminal.c \
-		sources/terminal/ft_capabilities.c \
-		sources/string/str_manip.c \
-		sources/terminal/insert_mode.c \
-		sources/terminal/delete_mode.c
+		$(IO)/ft_putchar.c \
+		$(IO)/ft_putstr.c \
+		$(STRING)/str_manip.c \
+		$(TERMINAL)/terminal_setup.c \
+		$(TERMINAL)/ft_capabilities.c \
+		$(TERMINAL)/move_cursor.c \
+		$(TERMINAL)/terminal_clear_screen.c \
+		$(TERMINAL)/insert_mode.c \
+		$(TERMINAL)/terminal_putstr.c \
+		$(TERMINAL)/delete_mode.c
 
 OBJ := $(SRC:.c=.o)
 
@@ -33,7 +44,7 @@ all: $(NAME)
 
 $(NAME):	$(OBJ)
 			@$(CC) $(HEADERS) $(LIBS) $(OBJ) -o $(NAME)
-			@echo "done"
+			@echo "$(NAME) : Finished Compilation"
 
 %.o : %.c
 			@$(CC) -c $(HEADERS) $< -o $@
@@ -46,6 +57,4 @@ fclean:		clean
 			@rm -f $(NAME)
 			@echo "$(NAME) : Removed Binary"
 
-re:			fclean
-			@rm -f $(NAME)
-			@echo "$(NAME) : Recompiled Project"
+re:			fclean all

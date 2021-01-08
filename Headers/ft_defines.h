@@ -6,7 +6,7 @@
 /*   By: ikhadem <ikhadem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/28 08:39:50 by ikhadem           #+#    #+#             */
-/*   Updated: 2021/01/05 12:39:09 by ikhadem          ###   ########.fr       */
+/*   Updated: 2021/01/08 09:48:15 by ikhadem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ typedef	struct	s_ichar
 **	dm ==> string to inter delete mode
 **	dc ==> string to delete char
 **	ed ==> string to exit delete mode
+** cd ==> string to delete from cursor till end of display
 */
 
 typedef	struct	s_dchar
@@ -49,6 +50,7 @@ typedef	struct	s_dchar
 	char		*dc;
 	char		*dm;
 	char		*ed;
+	char		*cd;
 }				t_dchar;
 
 /*
@@ -63,8 +65,11 @@ typedef	struct	s_dchar
 typedef struct	s_cmotion
 {
 	char		*le;
+	char		*up;
+	char		*ri;
 	char		*dw;
 	char		*cr;
+	char		*PC;
 }				t_cmotion;
 
 typedef	struct	s_capability

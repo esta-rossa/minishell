@@ -6,7 +6,7 @@
 /*   By: ikhadem <ikhadem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/28 08:33:52 by ikhadem           #+#    #+#             */
-/*   Updated: 2020/12/28 09:34:43 by ikhadem          ###   ########.fr       */
+/*   Updated: 2021/01/08 08:51:44 by ikhadem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,6 @@
 int		ft_putchar_fd(int fd, int c);
 int		ft_putstr_fd(int fd, char *str);
 int		ft_putchar(int c);
+int		ft_print_error(char *str);
 
 #endif
