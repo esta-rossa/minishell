@@ -6,7 +6,7 @@
 /*   By: ikhadem <ikhadem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/28 08:39:50 by ikhadem           #+#    #+#             */
-/*   Updated: 2021/01/08 09:48:15 by ikhadem          ###   ########.fr       */
+/*   Updated: 2021/01/08 14:43:23 by ikhadem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,10 @@
 # endif
 
 # define K_RETURN 127
+# define K_UP 4283163
+# define K_DOWN 4348699
+# define K_RIGHT 4414235
+# define K_LEFT 4479771
 
 /*
 **	im ==> string to inter insert mode

@@ -6,7 +6,7 @@
 /*   By: ikhadem <ikhadem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/07 14:15:23 by ikhadem           #+#    #+#             */
-/*   Updated: 2021/01/08 09:33:06 by ikhadem          ###   ########.fr       */
+/*   Updated: 2021/01/08 15:30:15 by ikhadem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void		terminal_clear_screen(t_cmd *cmd)
 	int		index;
 	int		border_check;
 
-	index = cmd->length - 1;
+	index = cmd->length;
 	tputs(cmd->cap.delete_char.dm, 1, ft_putchar);
 	while (index > 0)
 	{

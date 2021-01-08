@@ -6,7 +6,7 @@
 /*   By: ikhadem <ikhadem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/28 08:12:18 by ikhadem           #+#    #+#             */
-/*   Updated: 2021/01/08 08:42:27 by ikhadem          ###   ########.fr       */
+/*   Updated: 2021/01/08 14:43:40 by ikhadem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,10 @@ void input_manip(t_cmd *command)
 	int			c;
 
 	c = 0;
-	read(STDIN_FILENO, &c, 1);
+	read(STDIN_FILENO, &c, sizeof(int));
 	if (isprint(c))
 		insert_mode(c, command);
-	if (c == K_RETURN)
+	else if (c == K_RETURN)
 		delete_mode(command);
 }
 

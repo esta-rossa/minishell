@@ -6,13 +6,11 @@
 /*   By: ikhadem <ikhadem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/07 14:37:44 by ikhadem           #+#    #+#             */
-/*   Updated: 2021/01/08 09:38:57 by ikhadem          ###   ########.fr       */
+/*   Updated: 2021/01/08 10:49:12 by ikhadem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "terminal.h"
-#include <fcntl.h>
-#include <stdio.h>
 
 static int	check_border(int i)
 {
@@ -39,7 +37,6 @@ void			terminal_putstr(t_cmd *cmd)
 
 	i = 0;
 	tputs(cmd->cap.insert_char.im, 1, ft_putchar);
-	int fd = open("/dev/ttys001", O_RDWR);
 	while (i < cmd->length)
 	{
 		terminal_putchar(cmd->line[i], cmd->cap);
@@ -50,6 +47,5 @@ void			terminal_putstr(t_cmd *cmd)
 		}
 		i++;
 	}
-	dprintf(fd, "%d\n", i);
 	tputs(cmd->cap.insert_char.ei, 1, ft_putchar);
 }

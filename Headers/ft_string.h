@@ -6,7 +6,7 @@
 /*   By: ikhadem <ikhadem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/30 08:02:52 by ikhadem           #+#    #+#             */
-/*   Updated: 2020/12/30 08:31:49 by ikhadem          ###   ########.fr       */
+/*   Updated: 2021/01/08 14:47:15 by ikhadem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,6 @@
 # include "ft_defines.h"
 
 void			str_add(t_cmd *cmd, int c);
+void			str_remove(t_cmd *cmd);
 
 #endif

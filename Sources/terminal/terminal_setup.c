@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   terminal.c                                         :+:      :+:    :+:   */
+/*   terminal_setup.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ikhadem <ikhadem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/28 08:27:29 by ikhadem           #+#    #+#             */
-/*   Updated: 2020/12/29 08:14:13 by ikhadem          ###   ########.fr       */
+/*   Updated: 2021/01/08 14:18:54 by ikhadem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,10 +58,9 @@ int			setup_terminal(struct termios *term)
 {
 	if (tcgetattr(0, term) < 0)
 		return (FALSE);
-	term->c_lflag &= ~ECHO;
-	term->c_lflag &= ~ICANON;
+	term->c_lflag &= ~(ICANON | ECHO);
 	term->c_cc[VMIN] = 1;
-	term->c_cc[VTIME] = 0;
+	term->c_cc[VTIME] = 0 ;
 	if (tcsetattr(0, TCSANOW, term) < 0)
 		return (FALSE);
 	return (TRUE);
@@ -76,7 +75,7 @@ int			unset_terminal(struct termios *term)
 {
 	term->c_lflag |= ECHO;
 	term->c_lflag |= ICANON;
-	if (tcsetattr(0, TCSANOW, term) < 0)
+	if (tcsetattr(0, TCSADRAIN, term) < 0)
 		return (FALSE);
 	return (TRUE);
 }

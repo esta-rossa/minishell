@@ -1,6 +1,6 @@
 create some move cursor functions:
-	[ ] : Move cursor Down One Line
-	[ ] : Move cursor Up One Line
+	[x] : Move cursor Down One Line
+	[x] : Move cursor Up One Line
 	[ ] : Move cursor Home Postion
-	[ ] : Move cursor First Col Current Line
-	[ ] : Move cursor Last Col Current Line
+	[x] : Move cursor First Col Current Line
+	[x] : Move cursor Last Col Current Line
