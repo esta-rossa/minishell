@@ -6,7 +6,7 @@
 #    By: ikhadem <ikhadem@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/12/28 08:01:27 by ikhadem           #+#    #+#              #
-#    Updated: 2021/01/08 10:42:57 by ikhadem          ###   ########.fr        #
+#    Updated: 2021/01/11 12:19:09 by ikhadem          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,12 +28,13 @@ SRC :=	main.c \
 		$(STRING)/str_manip.c \
 		$(TERMINAL)/terminal_setup.c \
 		$(TERMINAL)/ft_capabilities.c \
+		$(TERMINAL)/move_index.c \
 		$(TERMINAL)/move_cursor.c \
-		$(TERMINAL)/move_cursor_shortcuts.c \
 		$(TERMINAL)/terminal_clear_screen.c \
 		$(TERMINAL)/insert_mode.c \
 		$(TERMINAL)/terminal_putstr.c \
-		$(TERMINAL)/delete_mode.c
+		$(TERMINAL)/delete_mode.c \
+		$(TERMINAL)/display_cursor.c
 
 OBJ := $(SRC:.c=.o)
 

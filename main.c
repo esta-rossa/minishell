@@ -6,7 +6,7 @@
 /*   By: ikhadem <ikhadem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/28 08:12:18 by ikhadem           #+#    #+#             */
-/*   Updated: 2021/01/08 17:00:24 by ikhadem          ###   ########.fr       */
+/*   Updated: 2021/01/11 12:21:35 by ikhadem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,10 +40,9 @@ void input_manip(t_cmd *command)
 	else if (c == K_RETURN)
 		delete_mode(command);
 	else if (c == K_LEFT)
-		move_cursor_left(command);
+		move_index_left(command);
 	else if (c == K_RIGHT)
-		move_cursor_right(command);
-	update_cursor_on_screen(command);
+		move_index_right(command);
 }
 
 int		main(int argc, char **argv, char **env)
