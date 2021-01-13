@@ -1,29 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   move_index.c                                       :+:      :+:    :+:   */
+/*   ft_history.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ikhadem <ikhadem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/08 10:42:31 by ikhadem           #+#    #+#             */
-/*   Updated: 2021/01/13 08:05:58 by ikhadem          ###   ########.fr       */
+/*   Created: 2021/01/11 12:27:26 by ikhadem           #+#    #+#             */
+/*   Updated: 2021/01/11 12:29:48 by ikhadem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "terminal.h"
+#ifndef FT_HISTORY_H
+# define FT_HISTORY_H
 
-void		move_index_right(t_cmd *cmd)
-{
-	if (cmd->index - 1 == cmd->length)
-		return;
-	cmd->index++;
-	update_cursor_on_screen(cmd, 2);
-}
+# include "termcaps.h"
 
-void		move_index_left(t_cmd *cmd)
+typedef struct	s_history
 {
-	if (cmd->index == 1)
-		return;
-	cmd->index--;
-	update_cursor_on_screen(cmd, 3);
-}
+	int					pos;
+	char				*line;
+	struct s_history	*previous;
+	struct s_history	*next;
+}				t_history;
+
+#endif

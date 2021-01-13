@@ -5,5 +5,4 @@ create some move cursor functions:
 	[x] : Move cursor First Col Current Line
 	[x] : Move cursor Last Col Current Line
 
-
 dprintf(open("/dev/ttys002", O_RDWR), "\nIindex:%d", cmd->index);
