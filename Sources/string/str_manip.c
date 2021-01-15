@@ -6,7 +6,7 @@
 /*   By: ikhadem <ikhadem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/29 09:45:02 by ikhadem           #+#    #+#             */
-/*   Updated: 2021/01/08 15:30:43 by ikhadem          ###   ########.fr       */
+/*   Updated: 2021/01/13 09:37:27 by ikhadem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,13 @@ static void		check_str_overflow(t_cmd *cmd)
 
 	if (cmd->length > cmd->buff_size)
 	{
-		place_holder = (char *)malloc((cmd->buff_size + 100) * sizeof(char));
+		place_holder = (char *)malloc((cmd->buff_size + CMD_MAX_LEN) * sizeof(char));
 		if (place_holder)
 		{
 			memcpy(place_holder, cmd->line, cmd->length);
 			free(cmd->line);
 			cmd->line = place_holder;
-			cmd->buff_size += 100;
+			cmd->buff_size += CMD_MAX_LEN;
 		}
 	}
 }

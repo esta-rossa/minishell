@@ -6,7 +6,7 @@
 /*   By: ikhadem <ikhadem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/28 08:39:50 by ikhadem           #+#    #+#             */
-/*   Updated: 2021/01/08 14:43:23 by ikhadem          ###   ########.fr       */
+/*   Updated: 2021/01/13 12:16:20 by ikhadem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,20 @@
 # endif
 
 # define K_RETURN 127
+# define K_CARRIAGE_RETURN 10
 # define K_UP 4283163
 # define K_DOWN 4348699
 # define K_RIGHT 4414235
 # define K_LEFT 4479771
+# define K_HOME 4741915
+# define K_END 4610843
 
+# define K_SHIFT_UP 16690
+# define K_SHIFT_DOWN 16946
+# define K_CNTL_RIGHT 17205
+# define K_CNTL_LEFT 17461
+# define K_CNTL_UP 16693
+# define K_CNTL_DOWN 16949
 /*
 **	im ==> string to inter insert mode
 **	ic ==> string to insert char

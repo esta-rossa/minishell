@@ -6,7 +6,7 @@
 /*   By: ikhadem <ikhadem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/30 08:02:52 by ikhadem           #+#    #+#             */
-/*   Updated: 2021/01/08 14:47:15 by ikhadem          ###   ########.fr       */
+/*   Updated: 2021/01/13 09:42:06 by ikhadem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define FT_STRING_H
 
 # ifndef CMD_MAX_LEN
-#  define CMD_MAX_LEN 2048
+#  define CMD_MAX_LEN 100
 # endif
 
 # include <string.h>
