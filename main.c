@@ -6,7 +6,7 @@
 /*   By: ikhadem <ikhadem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/28 08:12:18 by ikhadem           #+#    #+#             */
-/*   Updated: 2021/01/15 14:29:23 by ikhadem          ###   ########.fr       */
+/*   Updated: 2021/01/15 17:28:20 by ikhadem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,10 @@ void input_manip(t_cmd *command)
 	else if (c == K_CNTL_UP || c == K_CNTL_DOWN ||
 				c == K_CNTL_LEFT || c == K_CNTL_RIGHT)
 		contorle_handeler(c, command);
+	else if (c == K_HOME)
+		move_index_home(command);
+	else if (c == K_END)
+		move_index_end(command);
 }
 
 int		main(int argc, char **argv, char **env)

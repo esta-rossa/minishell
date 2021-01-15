@@ -6,7 +6,7 @@
 /*   By: ikhadem <ikhadem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/28 08:28:00 by ikhadem           #+#    #+#             */
-/*   Updated: 2021/01/11 12:24:21 by ikhadem          ###   ########.fr       */
+/*   Updated: 2021/01/15 16:09:02 by ikhadem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,7 @@ void		move_cursor_down_line(t_cmd *cmd);
 void		update_cursor_on_screen(t_cmd *cmd, int mode);
 void		move_index_left(t_cmd *cmd);
 void		move_index_right(t_cmd *cmd);
+void		move_index_home(t_cmd *cmd);
+void		move_index_end(t_cmd *cmd);
 
 #endif
