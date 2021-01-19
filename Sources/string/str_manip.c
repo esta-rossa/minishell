@@ -6,7 +6,7 @@
 /*   By: ikhadem <ikhadem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/29 09:45:02 by ikhadem           #+#    #+#             */
-/*   Updated: 2021/01/13 09:37:27 by ikhadem          ###   ########.fr       */
+/*   Updated: 2021/01/19 14:37:20 by ikhadem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ void			str_remove(t_cmd *cmd)
 {
 	int			index;
 
-	if (cmd->length == 0)
+	if (cmd->length == 0 || cmd->index == 1)
 		return;
 	index = cmd->index - 2;
 	while (index < cmd->length)
@@ -66,6 +66,7 @@ void			str_remove(t_cmd *cmd)
 		cmd->line[index] = cmd->line[index + 1];
 		index++;
 	}
+	cmd->line[index] = '\0';
 	cmd->index -= 1;
 	cmd->length -= 1;
 }

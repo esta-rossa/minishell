@@ -5,4 +5,17 @@ create some move cursor functions:
 	[x] : Move cursor First Col Current Line
 	[x] : Move cursor Last Col Current Line
 
-dprintf(open("/dev/ttys002", O_RDWR), "\nIindex:%d", cmd->index);
+
+Bugg :
+	[ ] : Check for deiffrent alt signals (vs code and Iterm signals are difrent)
+
+Main Functionalities:
+	[x] : Edit Line On Cursor Pos
+	[x] : Move Cursor (Left And Right)
+	[x] : Wrap Cursor At the margins
+	[ ] : History And Line Editing On that history
+	[x] : Highlit Part Of A Line
+	[ ] : COPY / CUT / PASTE Highlited Text
+	[x] : Move By Word
+	[x] : Move to start / end of line
+	[ ] : In Case Of A Multilined Cmd Up-arrow and Down-arrow move horizontally

@@ -6,7 +6,7 @@
 /*   By: ikhadem <ikhadem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/29 08:31:34 by ikhadem           #+#    #+#             */
-/*   Updated: 2021/01/08 11:51:21 by ikhadem          ###   ########.fr       */
+/*   Updated: 2021/01/18 12:15:16 by ikhadem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static void		init_edit_char(t_cmd *cmd)
 
 static void		init_delete_char(t_cmd *cmd)
 {
-	cmd->cap.delete_char.dc = tgetstr("dc=:1.3*:", NULL);
+	cmd->cap.delete_char.dc = tgetstr("dc", NULL);
 	cmd->cap.delete_char.dm = tgetstr("dm", NULL);
 	cmd->cap.delete_char.ed = tgetstr("ed", NULL);
 	cmd->cap.delete_char.cd = tgetstr("cd", NULL);
@@ -37,9 +37,19 @@ static void		init_cursor(t_cmd *cmd)
 	cmd->cap.cursor.cr = tgetstr("cr", NULL);
 }
 
+static void		init_display_mode(t_cmd *cmd)
+{
+	cmd->cap.display_mode.so = tgetstr("so", NULL);
+	cmd->cap.display_mode.se = tgetstr("se", NULL);
+	cmd->cap.display_mode.me = tgetstr("me", NULL);
+	cmd->cap.display_mode.rv = tgetstr("mr", NULL);
+	cmd->cap.display_mode.hb = tgetstr("md", NULL);
+}
+
 void			ft_init_capabilities(t_cmd *cmd)
 {
 	init_edit_char(cmd);
 	init_delete_char(cmd);
 	init_cursor(cmd);
+	init_display_mode(cmd);
 }

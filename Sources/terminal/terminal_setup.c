@@ -6,7 +6,7 @@
 /*   By: ikhadem <ikhadem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/28 08:27:29 by ikhadem           #+#    #+#             */
-/*   Updated: 2021/01/13 11:56:11 by ikhadem          ###   ########.fr       */
+/*   Updated: 2021/01/19 08:54:43 by ikhadem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ int			setup_terminal(struct termios *term)
 {
 	if (tcgetattr(0, term) < 0)
 		return (FALSE);
-	term->c_lflag &= ~(ICANON | ECHO);
+	term->c_lflag &= ~(ICANON | ECHO | ISIG);
 	term->c_cc[VMIN] = 1;
 	term->c_cc[VTIME] = 0 ;
 	if (tcsetattr(0, TCSANOW, term) < 0)
@@ -75,6 +75,7 @@ int			unset_terminal(struct termios *term)
 {
 	term->c_lflag |= ECHO;
 	term->c_lflag |= ICANON;
+	term->c_lflag |= ISIG;
 	if (tcsetattr(0, TCSADRAIN, term) < 0)
 		return (FALSE);
 	return (TRUE);

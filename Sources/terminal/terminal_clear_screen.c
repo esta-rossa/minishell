@@ -6,7 +6,7 @@
 /*   By: ikhadem <ikhadem@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/07 14:15:23 by ikhadem           #+#    #+#             */
-/*   Updated: 2021/01/11 12:13:57 by ikhadem          ###   ########.fr       */
+/*   Updated: 2021/01/18 09:15:26 by ikhadem          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,5 @@ static void	reset_cursor_pos(t_cmd *cmd)
 void		terminal_clear_screen(t_cmd *cmd)
 {
 	reset_cursor_pos(cmd);
-	tputs(cmd->cap.delete_char.cd, 1, ft_putchar);
-}
-
-
-void		clear_from_till_cursor_end_of_line(t_cmd *cmd)
-{
 	tputs(cmd->cap.delete_char.cd, 1, ft_putchar);
 }
